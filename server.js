@@ -7,6 +7,11 @@ const app = express();
 
 connectDb();
 
+// Init Middlewear
+
+app.use(express.json({extended: false}));
+
+
 app.get("/", (req, res) => res.send("API RUNING"));
 
 //Define ROutes
