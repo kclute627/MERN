@@ -20,13 +20,13 @@ exports.isUser = async (req, res) => {
     let user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ msg: "Invalid Credintials" });
+      return res.status(400).json({ errors: [{ msg: "Invalid Credintials"}] });
     }
 
     const isMatched = await bcrypt.compare(password, user.password); 
 
     if (!isMatched) {
-      return res.status(400).json({ msg: "Invalid Credintials" });
+      return res.status(400).json({ errors: [{ msg: 'Invalid Credentials' }] });
     }
 
     //JWS Token

@@ -18,7 +18,11 @@ router.get("/", auth, authController.signUpUser);
 //@access       Public
 
 router.post("/",
-[check("email", "Please Enter a valid email address").isEmail(), check("password", "Password is required").exists()],
+[
+    check("email", "Please Enter a valid email address").isEmail(), 
+    check("password", "Password is required").exists(),
+],
+
 authController.isUser
 );
 

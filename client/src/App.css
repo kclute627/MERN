@@ -575,3 +575,11 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+.spinner {
+  display: block;
+  width: 200px;
+  margin: auto;
+
+  border-color: red;
+}
