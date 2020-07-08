@@ -1,9 +1,11 @@
 const Profile = require("../Models/Profile");
 const User = require("../Models/User");
+const Post = require("../Models/Post");
 const request = require('request');
 const config = require('config');
 const { check, validationResult } = require("express-validator");
 const { response } = require("express");
+
 
 exports.getProfile = async (req, res) => {
   try {
@@ -53,8 +55,7 @@ exports.createUserProfile = async (req, res) => {
   if (bio) profileFields.bio = bio;
   if (status) profileFields.status = status;
   if (githubusername) profileFields.githubusername = githubusername;
-  if (skills)
-    profileFields.skills = skills.split(",").map((skill) => skill.trim());
+  if (skills)profileFields.skills = skills.split(",").map((skill) => skill.trim());
 
   //build social object
 
@@ -122,7 +123,9 @@ exports.getProfileByUserId = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   try {
-    // todo -- remove users posts
+    //  remove users posts
+    await Post.deleteMany({user: req.user.id})
+
     // remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
     //remove user
