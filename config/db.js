@@ -10,13 +10,14 @@ const connectDb = async () => {
            useNewUrlParser: true,
            useUnifiedTopology: true,
            useCreateIndex: true,
-           useFindAndModify: false
+           useFindAndModify: false,
+           
        })
        console.log('MONGODB COnnected ')
    } catch(err){
        console.error(err.message)
 
-       //exit process with failure
+       //exit process with failureb
        process.exit(1) 
 
    }

@@ -67,7 +67,7 @@ const AddExp = ({addExp, history}) => {
         <div className='form-group'>
           <textarea
             name='description'
-            cols='30'
+            cols='30' 
             rows='5'
             placeholder='Job Description'
             value={description} onChange={e => onChange(e)}
@@ -86,4 +86,4 @@ AddExp.propTypes = {
   addExp: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addExp })(AddExp);
+export default connect(null, { addExp })(withRouter(AddExp));
