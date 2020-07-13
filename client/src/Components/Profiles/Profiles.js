@@ -9,12 +9,12 @@ const Profiles = ({getProfiles, profile: profiles, loading}) => {
     useEffect(()=> {
         getProfiles();
 
-    }, [])
+    }, [getProfiles])
 
   return(
-       <div>
+       <div>   
 
-  </div>
+     </div>
   );
 };
 
