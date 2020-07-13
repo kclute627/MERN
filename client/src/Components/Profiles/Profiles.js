@@ -5,13 +5,13 @@ import ProfileItem from './ProfileItem'
 import { connect } from "react-redux";
 import {getProfiles} from '../../actions/profile'
 
-const Profiles = ({getProfiles, profile: profiles, loading}) => {
+const Profiles = ({getProfiles, profile: {profiles, loading }}) => {
 
     useEffect(()=> {
         getProfiles(); 
 
     }, [getProfiles]);
-
+    console.log(profiles)
 
   return(
        <Fragment>
@@ -25,7 +25,7 @@ const Profiles = ({getProfiles, profile: profiles, loading}) => {
 
                    {profiles.length > 0 ? (
                        profiles.map(cur => (
-                           <ProfileItem key={cur.id} profile={cur}></ProfileItem>
+                           <ProfileItem key={cur._id} profile={cur}></ProfileItem>
                        ))
                    ) : <h4> No Profiles Found </h4>}
                </div>
