@@ -41,7 +41,7 @@ const EditProfile = ({ profile: {loading, profile }, createProfile, history, get
 
       })
 
-  }, [loading])
+  }, [loading, getCurrentProfile])
 
   const {
     company,

@@ -245,7 +245,7 @@ export const deleteEducation = (id) => async (dispatch) => {
 export const deleteProfile = () => async (dispatch) => {
   if (window.confirm("Are You Sure This Can Not Be Un-Done")) {
     try {
-      const res = await axios.delete(`/api/profile`);
+      
 
       dispatch({
         type: CLEAR_PROFILE,
@@ -257,7 +257,7 @@ export const deleteProfile = () => async (dispatch) => {
       dispatch(setAlert("Your Account Has Been Deleted "));
     } catch (error) {
       dispatch({
-        type: PROFILE_ERROR, 
+        type: PROFILE_ERROR,  
         payload: {
           msg: error.response.statusText,
           status: error.response.status,
