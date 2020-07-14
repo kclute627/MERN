@@ -11,7 +11,7 @@ const Profiles = ({getProfiles, profile: {profiles, loading }}) => {
         getProfiles(); 
 
     }, [getProfiles]);
-    console.log(profiles)
+    console.log("profiles", profiles)
 
   return(
        <Fragment>
@@ -25,7 +25,9 @@ const Profiles = ({getProfiles, profile: {profiles, loading }}) => {
 
                    {profiles.length > 0 ? (
                        profiles.map(cur => (
+                           console.log(cur, 'cur'),
                            <ProfileItem key={cur._id} profile={cur}></ProfileItem>
+                           
                        ))
                    ) : <h4> No Profiles Found </h4>}
                </div>
@@ -44,4 +46,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-export default connect(mapStateToProps, {getProfiles})(Profiles);
+export default connect(mapStateToProps, {getProfiles})(Profiles);  

@@ -33,7 +33,7 @@ exports.regUser = async (req, res) => {
     const avatar = gravatar.url(email, {
       s: "200",
       r: "pg",
-      d: "mm",
+      d: "retro",
     });
 
     user = new User({
