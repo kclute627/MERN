@@ -8,6 +8,7 @@ import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExp from "./ProfileExp";
 import ProfileEducation from "./ProfileEducation";
+import ProfileGithub from './ProfileGithub';
 
 const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   console.log(match.params.id);
   console.log("profileProps", profile);
 
-  return profile !== null ?  (
+  return (
     <Fragment>
       {profile === null || profile.loading ? (
         <Spinner />
@@ -54,19 +55,24 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
               {profile.education.length > 0 ? (
                 <Fragment>
                   {profile.education && profile.education.map((cur) => (
-                    <ProfileExp key={cur._id} education={cur} />
+                    <ProfileEducation key={cur._id} education={cur} />
                   ))}
                 </Fragment>
               ) : (
                 <h4> No Education Listed </h4>
               )}
             </div>
+            {
+              profile.githubusername && (
+                <ProfileGithub username={profile.githubusername}/>
+              )
+            }
           </div>
         </Fragment>
       )}
       ;
     </Fragment>
-  ): <div></div>;
+  );
 };
 
 Profile.propTypes = {
