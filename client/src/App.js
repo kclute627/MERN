@@ -11,8 +11,9 @@ import CreateProfile from "./Components/ProfileForms/CreateProfile";
 import addExp from "./Components/ProfileForms/AddExp";
 import addEducation from "./Components/ProfileForms/AddEducation";
 import EditProfile from "./Components/ProfileForms/EditProfile";
-import Profiles from './Components/Profiles/Profiles'
-import Profile from './Components/Profile/Profile'
+import Profiles from "./Components/Profiles/Profiles";
+import Profile from "./Components/Profile/Profile";
+import Posts from "./Components/Posts/Posts";
 import "./App.css";
 // REDUX
 import { Provider } from "react-redux";
@@ -34,35 +35,32 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
-          <Route exact path='/' component={Landing} />
-          <section className='container'>
+          <Route exact path="/" component={Landing} />
+          <section className="container">
             <Alert />
             <Switch>
-              <Route exact path='/reg' component={Reg} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/profiles' component={Profiles}/>
-              <Route exact path='/profile/:id' component={Profile}/>
-              <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <Route exact path="/reg" component={Reg} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:id" component={Profile} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute
                 exact
-                path='/create-profile'
+                path="/create-profile"
                 component={CreateProfile}
               />
               <PrivateRoute
                 exact
-                path='/edit-profile'
+                path="/edit-profile"
                 component={EditProfile}
               />
-               <PrivateRoute
-                exact
-                path='/add-experience'
-                component={addExp}
-              />
+              <PrivateRoute exact path="/add-experience" component={addExp} />
               <PrivateRoute
                 exact
-                path='/add-education'
+                path="/add-education"
                 component={addEducation}
               />
+              <PrivateRoute exact path="/posts" component={Posts} />
             </Switch>
           </section>
         </Fragment>

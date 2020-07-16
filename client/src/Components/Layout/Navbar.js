@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
@@ -9,6 +10,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/dashboard'>  <i className='fas fa-user'></i>{" "}Dashboard</Link>
+      </li>
+      <li>
+        <Link to='/posts'>  <i className='fas fa-user'></i>{" "}Message Board</Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
