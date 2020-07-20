@@ -4,6 +4,7 @@ import { getPosts } from "../../actions/post";
 import PropTypes from "prop-types";
 import Spinner from '../Layout/Spinner';
 import PostItem from './PostItem'
+import PostForm from './PostForm'
 
 const Posts = ({getPosts, post: {posts, loading}}) => {
 
@@ -17,7 +18,7 @@ const Posts = ({getPosts, post: {posts, loading}}) => {
       <p className="lead">
           <i className="fas fa-user"></i> Welcome to the Community
       </p>
-        {/* post form  */}
+        <PostForm/>
         <div className="posts">
             {posts.map(cur=> (
             <PostItem key={cur._id} post={cur}/>
