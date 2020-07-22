@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { addLike, removeLike, deletePost } from "../../actions/post";
 
 const PostItem = ({
-  showActions,
+  showActions, 
   addLike,
   removeLike,
   deletePost,
