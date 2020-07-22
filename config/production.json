@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://kyle:x3QhH2jaWKatDub@devconnecter-qiitj.mongodb.net/database" ,
+    "jwtSecret": "colewclutter",
+    "githubClientId": "Iv1.9017ed8567f3c641",  
+    "githubSecret": "0fcf648a5b7e0cf6fbcc8d4c8e4366803065f0fd"  
+}
