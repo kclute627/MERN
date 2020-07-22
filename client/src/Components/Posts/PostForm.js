@@ -6,15 +6,16 @@ import { addPost } from "../../actions/post";
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState(" ");
   return (
-    <div className='post-form' onSubmit={e => {
+    <div className='post-form' >
+      <div className='bg-primary p'>
+        <h3>Say Something...</h3>
+      </div>
+      <form className='form my-1'
+      onSubmit={e => {
         e.preventDefault()
         addPost({text})
         setText('')
     }}>
-      <div className='bg-primary p'>
-        <h3>Say Something...</h3>
-      </div>
-      <form className='form my-1'>
         <textarea
           name='text'
           cols='30'
